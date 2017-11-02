@@ -16,4 +16,11 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Log.objects.all()
 
+class EntryView(generic.ListView):
+    template_name = 'Logbook/entries.html'
+    context_object_name = 'all_entries'
+
+    def get_queryset(self):
+        return Entry.objects.all()
+
 # Create your views here.
