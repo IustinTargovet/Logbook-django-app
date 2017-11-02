@@ -8,11 +8,12 @@ class Log(models.Model):
     log_date = models.DateTimeField()
 
     def __str__(self):
-        return self.title
+        return self.log_title
 
 class Entry(models.Model):
     log = models.ForeignKey(Log, on_delete=models.CASCADE)
     title = models.CharField(max_length = 20)
+    text = models.CharField(max_length = 500, default = "None")
     date = models.DateTimeField()
 
     def __str__(self):
